@@ -1,7 +1,7 @@
 void setup(){
   // setup is called only once when the program starts
   background(0);
-  frameRate(24);
+  frameRate(60);
   // default is 60 (fps) 
 }
 
