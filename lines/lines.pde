@@ -1,12 +1,22 @@
+float a = 0;
+float b = 0;
+
 void setup(){
   background(0);
-  frameRate(12);
+  frameRate(20);
 }
 void draw() {
-  background(0);
-  
-  float x = random(100);
-  float y = random(80);
+  background(255 * noise(a), 255 * noise(a), 255);
+  translate(a*0.1, b*0.1);
+  rotate(a*0.01);
+  if (a>50){
+   a = 10;
+  }
+  if (b>50){
+   b = 5;
+  }
+  float x = mouseX*0.5 + noise(a)*width;
+  float y = mouseY*0.5 + noise(b)*height;
   //horizontal line
   stroke(255, 0 , 0);
   line(0,y, 99,y);
@@ -19,6 +29,9 @@ void draw() {
   line(x,0, x,99);
   stroke(0, 0, 255);
   line(x-10,0, x-10,99);
+  
+  a = a + 0.1;
+  b = b + 0.2;
   
   saveFrame("output/plaid-######.png");
 }
