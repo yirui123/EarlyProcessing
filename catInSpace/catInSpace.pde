@@ -53,7 +53,7 @@ void draw() {
   float CatSize = random(120, 140);
   image(cat, sin(mouseX)+mouseX, cos(mouseY)+mouseY, CatSize, CatSize);
   fill(r, 20);
-  r = r + 0.001;
+  r = r + 1;
   if (r > 100) {
     r = 0;
   } 
